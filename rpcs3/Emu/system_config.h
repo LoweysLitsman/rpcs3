@@ -141,7 +141,7 @@ struct cfg_root : cfg::node
 		cfg::_bool use_gpu_texture_scaling{ this, "Use GPU texture scaling", false };
 		cfg::_bool stretch_to_display_area{ this, "Stretch To Display Area", false, true };
 		cfg::_bool force_high_precision_z_buffer{ this, "Force High Precision Z buffer" };
-		cfg::_bool strict_rendering_mode{ this, "Strict Rendering Mode" };
+		cfg::_bool strict_rendering_mode{ this, "Strict Rendering Mode", false, true };
 		cfg::_bool disable_zcull_queries{ this, "Disable ZCull Occlusion Queries", false, true };
 		cfg::_bool disable_video_output{ this, "Disable Video Output", false, true };
 		cfg::_bool disable_vertex_cache{ this, "Disable Vertex Cache", false };
@@ -153,7 +153,7 @@ struct cfg_root : cfg::node
 		cfg::_bool full_rgb_range_output{ this, "Use full RGB output range", true, true }; // Video out dynamic range
 		cfg::_bool strict_texture_flushing{ this, "Strict Texture Flushing", false };
 		cfg::_bool multithreaded_rsx{ this, "Multithreaded RSX", false };
-		cfg::_bool relaxed_zcull_sync{ this, "Relaxed ZCULL Sync", false };
+		cfg::_bool relaxed_zcull_sync{ this, "Relaxed ZCULL Sync", false, true };
 		cfg::_bool force_hw_MSAA_resolve{ this, "Force Hardware MSAA Resolve", false, true };
 		cfg::_bool stereo_enabled{ this, "3D Display Enabled", false };
 		cfg::_enum<stereo_render_mode_options> stereo_render_mode{ this, "3D Display Mode", stereo_render_mode_options::disabled, true };
@@ -161,10 +161,10 @@ struct cfg_root : cfg::node
 		cfg::_bool precise_zpass_count{ this, "Accurate ZCULL stats", true };
 		cfg::_int<1, 8> consecutive_frames_to_draw{ this, "Consecutive Frames To Draw", 1, true};
 		cfg::_int<1, 8> consecutive_frames_to_skip{ this, "Consecutive Frames To Skip", 1, true};
-		cfg::_int<25, 800> resolution_scale_percent{ this, "Resolution Scale", 100 };
+		cfg::_int<25, 800> resolution_scale_percent{ this, "Resolution Scale", 100, true };
 		cfg::uint<0, 16> anisotropic_level_override{ this, "Anisotropic Filter Override", 0, true };
 		cfg::_float<-32, 32> texture_lod_bias{ this, "Texture LOD Bias Addend", 0, true };
-		cfg::_int<1, 1024> min_scalable_dimension{ this, "Minimum Scalable Dimension", 16 };
+		cfg::_int<1, 1024> min_scalable_dimension{ this, "Minimum Scalable Dimension", 16, true };
 		cfg::_int<0, 16> shader_compiler_threads_count{ this, "Shader Compiler Threads", 0 };
 		cfg::_int<0, 30000000> driver_recovery_timeout{ this, "Driver Recovery Timeout", 1000000, true };
 		cfg::uint<0, 16667> driver_wakeup_delay{ this, "Driver Wake-Up Delay", 0, true };
